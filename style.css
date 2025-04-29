@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #ffedf4;
+    color: #444;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg, #ffedf4 0%, #ffe8f7 100%);
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #ff6b9d;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+#cat-area {
+    position: relative;
+    height: 280px;
+    margin: 25px auto;
+    width: 100%;
+}
+
+#main-cat {
+    width: 160px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#main-cat:hover {
+    transform: scale(1.05);
+}
+
+.cat {
+    position: absolute;
+    width: 85px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0);
+    animation: popIn 0.6s forwards;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-10deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+#buttons {
+    margin: 25px 0;
+}
+
+button {
+    background-color: #ff6b9d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    margin: 0 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
+button:hover {
+    background-color: #ff4785;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#smile-btn {
+    background-color: #27ae60;
+    display: block;
+    margin: 20px auto;
+}
+
+#smile-btn:hover {
+    background-color: #219653;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#cat-counter {
+    font-size: 16px;
+    margin: 12px 0;
+    color: #ff6b9d;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    background-color: rgba(255, 235, 245, 0.95);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    border: 2px solid white;
+}
+
+#message {
+    font-size: 18px;
+    margin: 18px 0;
+    color: #ff4785;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.final-message {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: bounceIn 1s forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#final-message-yes h2,
+#final-message-no h2 {
+    color: #ff4785;
+    margin-bottom: 12px;
+    font-size: 26px;
+}
+
+#final-message-yes p,
+#final-message-no p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #cat-area {
+        height: 240px;
+    }
+
+    #main-cat {
+        width: 130px;
+    }
+
+    .cat {
+        width: 65px;
+    }
+
+    button {
+        padding: 10px 25px;
+        font-size: 16px;
+        margin: 0 8px;
+    }
+
+    #final-message {
+        padding: 20px;
+    }
+
+    #final-message h2 {
+        font-size: 22px;
+    }
+
+    #final-message p {
+        font-size: 16px;
+    }
+}
